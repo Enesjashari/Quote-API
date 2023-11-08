@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Root</title>
+</head>
+<body>
+    <header>
+        <h1>API Root</h1>
+    </header>
+
+    <main>
+        <ul>
+            {% for key, value in api_root.items %}
+                <li>
+                    <a href="{{ value.url }}">{{ key }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </main>
+
+    <footer>
+        <p>Powered by Django Rest Framework</p>
+    </footer>
+</body>
+</html>
