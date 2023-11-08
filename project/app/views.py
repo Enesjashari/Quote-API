@@ -1,6 +1,7 @@
 from rest_framework import generics
 from .models import Quote
 from .serializers import QuoteSerializer
+from django.shortcuts import render
 
 class QuoteList(generics.ListCreateAPIView):
     queryset = Quote.objects.all()
@@ -22,3 +23,20 @@ def get_quotes(request):
     serialized_members = QuoteSerializer(members, many=True).data
     data = {'Quotes': [serialized_members]}
     return Response(data)
+
+import random
+
+import random
+from django.http import JsonResponse
+
+def random_quote_json(request):
+    quote_count = Quote.objects.count()
+    random_index = random.randint(0, quote_count - 1)
+    random_quote = Quote.objects.all()[random_index]
+
+    data = {
+        "quote": random_quote.quote,
+        "author": random_quote.author
+    }
+    return JsonResponse(data)
+
