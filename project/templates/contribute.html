@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contribute Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 12px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Contribute Form</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        <label for="quote">Quote:</label>
+        <input type="text" id="quote" name="quote" placeholder="Enter the quote">
+
+        <label for="movie_title">Movie Title:</label>
+        <input type="text" id="movie_title" name="movie_title" placeholder="Enter the movie title">
+
+        <label for="actor_name">Actor Name:</label>
+        <input type="text" id="actor_name" name="actor_name" placeholder="Enter the actor name">
+
+        <label for="category">Category:</label>
+        <input type="text" id="category" name="category" placeholder="Enter the category">
+
+        <label for="publish_date">Publish Date:</label>
+        <input type="text" id="publish_date" name="publish_date" placeholder="Enter the publish date">
+
+        <label for="source">Source:</label>
+        <input type="text" id="source" name="source" placeholder="Enter the source">
+
+        <label for="context">Context:</label>
+        <input type="text" id="context" name="context" placeholder="Enter the context">
+
+        <label for="rating">Rating:</label>
+        <input type="text" id="rating" name="rating" placeholder="Enter the rating">
+
+        <label for="language">Language:</label>
+        <input type="text" id="language" name="language" placeholder="Enter the language">
+
+        <label for="author">Author:</label>
+        <input type="text" id="author" name="author" placeholder="Enter the author">
+
+        <label for="author_bio">Author Bio:</label>
+        <input type="text" id="author_bio" name="author_bio" placeholder="Enter the author bio">
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

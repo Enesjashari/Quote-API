@@ -40,3 +40,27 @@ def random_quote_json(request):
     }
     return JsonResponse(data)
 
+def contribute(request):
+    quote = request.POST.get("quote")
+    if quote:
+        movie_title  = request.POST.get("movie_title",'Null')        
+        actor_name   = request.POST.get("actor_name",'Null')        
+        category     = request.POST.get("category",'Null')        
+        publish_date = request.POST.get("publish_date",'Null')            
+        source       = request.POST.get("source",'Null')    
+        context      = request.POST.get("context",'Null')    
+        rating       = request.POST.get("rating",'Null')    
+        language     = request.POST.get("language",'Null')        
+        author       = request.POST.get("author",'Null')    
+        author_bio   = request.POST.get("author_bio",'Null')        
+        adding = Quote(quote=quote,movie_title = movie_title , actor_name = actor_name , 
+                    category=category,publish_date = publish_date , source=source
+                    ,context=context,rating=rating,language=language,
+                    author=author,author_bio=author_bio)
+        adding.save()
+    
+    return render(request,"contribute.html")
+
+
+def index(request):
+    return render(request,'index.html')

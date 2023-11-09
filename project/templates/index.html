@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* CSS Reset */
+        body, h1, h2, p, code, form, label, input, button {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+            color: #007BFF;
+            margin-top: 20px;
+        }
+
+        section {
+            margin: 20px;
+            padding: 20px;
+            background-color: #282c34;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        section h2 {
+            color: #61dafb;
+            margin-bottom: 10px;
+        }
+
+        code {
+            display: block;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #1e1e1e;
+            color: #d4d4d4;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto; /* Enable horizontal scrolling for long lines of code */
+        }
+
+        /* Form Styles */
+        form {
+            margin-top: 10px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #d4d4d4;
+        }
+
+        input {
+            padding: 5px;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+        pre {
+            background-color: #f8f8f8;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        blockquote {
+            background-color: #f8f8f8;
+            border-left: 4px solid #007BFF;
+            padding: 10px;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to Quote API</h1>
+
+    <!-- How to use API -->
+    <section>
+        <h2>How to use API</h2>
+        <code>
+            // Your code or API usage instructions here
+            const apiUrl = 'https://example.com/quote';
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => console.log(data));
+        </code>
+    </section>
+    <!-- end -->
+
+    <!-- How to use random form -->
+    <section>
+        <h2>How to use random form</h2>
+        <code>
+            <!-- Your HTML form code here -->
+            <form action="/submit" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <!-- Add more form elements as needed -->
+                <button type="submit">Submit</button>
+            </form>
+        </code>
+    </section>
+
+    <!-- Documentation -->
+    <h1>Movie Quote API Documentation</h1>
+
+    <section>
+        <h2>Introduction</h2>
+        <p>Welcome to the Movie Quote API documentation. This API provides access to the latest movie quotes, along with relevant information such as rating, author, author bio, and movie name. The API is free for the first month, and we're excited to have you on board.</p>
+    </section>
+
+    <section>
+        <h2>Base URL</h2>
+        <code>https://api.example.com/movie-quotes</code>
+    </section>
+
+    <section>
+        <h2>Authentication</h2>
+        <p>To access the Movie Quote API, you need to include your API key in the request headers. You can obtain your API key by registering on our <a href="https://developer.example.com">developer portal</a>.</p>
+        <pre><code>Authorization: Bearer YOUR_API_KEY</code></pre>
+    </section>
+
+    <section>
+        <h2>Endpoints</h2>
+
+        <h3>1. Get Latest Movie Quotes</h3>
+        <p><strong>Endpoint:</strong> <code>/quotes/latest</code></p>
+        <p><strong>Method:</strong> <code>GET</code></p>
+        <p><strong>Description:</strong> Get the latest movie quotes.</p>
+        <h4>Request</h4>
+        <pre><code>GET /quotes/latest</code></pre>
+        <h4>Response</h4>
+        <pre><code>{
+  "quotes": [
+    {
+      "quote": "Your quote here.",
+      "rating": 4.8,
+      "author": "John Doe",
+      "author_bio": "Renowned screenwriter",
+      "movie_name": "Example Movie"
+    },
+    // Additional quotes...
+  ]
+}</code></pre>
+
+        <h3>2. Search Movie Quotes</h3>
+        <p><strong>Endpoint:</strong> <code>/quotes/search</code></p>
+        <p><strong>Method:</strong> <code>GET</code></p>
+        <p><strong>Description:</strong> Search for movie quotes based on keywords.</p>
+        <h4>Request</h4>
+        <pre><code>GET /quotes/search?q=keyword</code></pre>
+        <h4>Response</h4>
+        <pre><code>{
+  "quotes": [
+    {
+      "quote": "Your quote here.",
+      "rating": 4.5,
+      "author": "Jane Smith",
+      "author_bio": "Award-winning director",
+      "movie_name": "Another Movie"
+    },
+    // Additional quotes...
+  ]
+}</code></pre>
+    </section>
+
+    <section>
+        <h2>Error Handling</h2>
+        <p>In case of an error, the API will respond with an appropriate HTTP status code and a JSON object containing details about the error.</p>
+        <blockquote>
+            <p><strong>Example:</strong></p>
+            <pre><code>{
+  "error": {
+    "code": 404,
+    "message": "Not Found",
+    "details": "The requested resource was not found."
+  }
+}</code></pre>
+        </blockquote>
+    </section>
+
+    <section>
+        <h2>Rate Limits</h2>
+        <p>To ensure fair usage, the API has rate limits. Free users are limited to 1000 requests per day.</p>
+    </section>
+
+    <section>
+        <h2>Conclusion</h2>
+        <p>Thank you for using the Movie Quote API. If you have any questions or need further assistance, please contact our support team at <a href="mailto:support@example.com">support@example.com</a>.</p>
+        <p>Happy quoting!</p>
+    </section>
+    
+</body>
+</html>
